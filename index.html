@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Bi-Weekly Budget</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="display">
+                <h1 id="total">Total: $900</h1>
+                <h3>Income: + $<span id="displayIncome">0</span></h3>
+                <h3>Expenses: - $<span id="displayExpense">0</span></h3>
+            </div>
+        </header>
+        <main>
+            <div id="incomeColumn">
+                <div id="inputBlock">
+                    <div id="incomeBlock">
+                        <label for="inputName">Income</label>
+                        <div class="incomeInputs">
+                            <input type="text" id="incomeName">
+                            <input type="number" id="income">
+                            <div class="button">
+                                <a id="addIncome">Add</a>
+                            </div>
+                            <ul id="incomeUL">
+                                <li class="inputFormat">
+                                    <span>Home</span>
+                                    <span>$300</span>
+                                    <span><i class="far fa-trash-alt"></i></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="expenseColumn">
+                    <div id="expenseBlock">
+                        <label for="expenseName">Expense</label>
+                        <div class="expenseInputs">
+                            <input type="text" id="expenseName">
+                            <input type="number" id="expense">
+                            <div class="button">
+                                <a id="addExpense">Add</a>
+                            </div>
+                            <ul id="expenseUL">
+                                <li class="inputFormat">
+                                    <span>Home</span>
+                                    <span>$300</span>
+                                    <span><i class="far fa-trash-alt"></i></span>
+                                </li>
+                                <li class="inputFormat">
+                                    <span>Home</span>
+                                    <span>$300</span>
+                                    <span><i class="far fa-trash-alt"></i></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

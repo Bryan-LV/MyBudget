@@ -1,0 +1,115 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+    padding:0;
+}
+html, body{
+    width:100%;
+    background-color: #282828;
+    color:white;
+}
+
+
+/* HEADER STYLES */
+
+.display{
+    width:100%;
+    text-align: center;
+    padding:15px 0px;
+}
+
+input{
+    border-radius: 3px;
+}
+
+.incomeInputs input{
+    border:2px solid rgb(69, 145, 49);
+}
+
+.expenseInputs input{
+    border:2px solid rgb(215, 22, 22)
+}
+
+[for="inputName"],[for="expenseName"]{
+    font-size:1.3rem;
+}
+
+[type="number"]{
+    margin-top: 5px;
+}
+
+#inputBlock{
+    display:flex;
+    justify-content: space-around;
+
+}
+
+.button{
+    margin-top:15px;
+    cursor: pointer;
+}
+
+.button a{
+    padding:8px;
+    background-color: #ECD018;
+    border-radius: 3px;
+}
+
+
+
+/* MAIN DIV STYLES  */
+#incomeColumn{
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: space-around;
+}
+
+ul{
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding-top:10%;
+    list-style-type: none;
+}
+
+li.inputFormat {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+    margin-top: 17px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
