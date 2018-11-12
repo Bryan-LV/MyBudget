@@ -7,7 +7,7 @@ expenseButton.addEventListener('click',addExpense);
 
 
 // Display UI header
-let total = document.querySelector('#total');
+let displayTotal = document.querySelector('#total');
 let displayIncome = document.querySelector('#displayIncome');
 let displayExpense = document.querySelector('#displayExpense');
 
@@ -18,8 +18,12 @@ let Budget = {
     totalIncome: 0,
     expenses:[],
     totalExpenses: 0,
-    updateTotals: function(number){
+    updateTotal: function(){
         // update Total
+        let total = this.totalIncome - this.totalExpenses;
+        this.total = total;
+        displayTotal.innerHTML = this.total;
+
     },
     addIncome: function () {
         let totalIncome = 0;
@@ -58,6 +62,7 @@ function addIncome() {
 
     addTemplate(incomeName,incomeNumber,'income');
     Budget.updateIncome(incomeNumber);
+    Budget.updateTotal();
     // addToLS();
 }
 
@@ -68,6 +73,7 @@ function addExpense (){
 
     addTemplate(expenseName,expenseNumber,'expense');
     Budget.updateExpenses(expenseNumber);
+    Budget.updateTotal();
 }
 
 function addTemplate(name,number,type){
