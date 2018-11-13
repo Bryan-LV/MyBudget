@@ -63,7 +63,7 @@ function addIncome() {
     addTemplate(incomeName,incomeNumber,'income');
     Budget.updateIncome(incomeNumber);
     Budget.updateTotal();
-    // addToLS();
+    addToLS(incomeName,incomeNumber,'income');
 }
 
 function addExpense (){
@@ -74,6 +74,7 @@ function addExpense (){
     addTemplate(expenseName,expenseNumber,'expense');
     Budget.updateExpenses(expenseNumber);
     Budget.updateTotal();
+    addToLS(expenseName,expenseNumber,'expense');
 }
 
 function addTemplate(name,number,type){
@@ -97,6 +98,39 @@ function addTemplate(name,number,type){
     }
 }
 
+function addToLS (name,number,type){
+    // check if income arr is in local storage, if not then create it
+    let incomeLS;
+    if(localStorage.getItem('income') === null){
+        incomeLS = [];
+    } else{
+        incomeLS = JSON.parse(localStorage.getItem('income'));
+    }
+
+    let expenseLS;
+    if(localStorage.getItem('expense') === null){
+        expenseLS = [];
+    } else{
+        expenseLS = JSON.parse(localStorage.getItem('expense'));
+    }
+
+    // add new item to storage
+    let Item = {
+        name: name,
+        number: number,
+        type:type
+    }
+    if(type === 'income'){   
+        incomeLS.push(Item);
+        localStorage.setItem('income',JSON.stringify(incomeLS));
+    } else if( type === 'expense'){
+        expenseLS.push(Item);
+        localStorage.setItem('expense',JSON.stringify(expenseLS));
+    }
+    //put it back
+
+
+}
 
 // end block wrapper
 
