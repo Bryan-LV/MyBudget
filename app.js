@@ -77,6 +77,8 @@ function addExpense (){
     addToLS(expenseName,expenseNumber,'expense');
 }
 
+
+// add new income or expense to page
 function addTemplate(name,number,type){
     // create new income template
     let input = `<li class="inputFormat">
@@ -98,6 +100,7 @@ function addTemplate(name,number,type){
     }
 }
 
+// Add income or expense to local storage
 function addToLS (name,number,type){
     // check if income arr is in local storage, if not then create it
     let incomeLS;
@@ -127,10 +130,57 @@ function addToLS (name,number,type){
         expenseLS.push(Item);
         localStorage.setItem('expense',JSON.stringify(expenseLS));
     }
-    //put it back
-
-
 }
+
+function retreiveFromLS(){
+    // grab local storage
+    let incomeLS;
+    if(localStorage.getItem('income') === null){
+        return;
+    } else{
+        incomeLS = JSON.parse(localStorage.getItem('income'));
+    }
+    let incomeLI;
+    // loop through array and objs and create template
+    incomeLS.forEach(function(current){
+        incomeLI += `<li class="inputFormat">
+        <span>${current.name}</span>
+        <span>$${current.number}</span>
+        <span><i class="far fa-trash-alt"></i></span>
+    </li>`;
+
+        Budget.updateIncome(current.number);
+    });
+
+    Budget.updateTotal();
+
+    // add template to page
+    document.querySelector('#incomeUL').innerHTML = incomeLI;
+
+    let expenseLS;
+    if(localStorage.getItem('expense') === null){
+        return;
+    } else{
+        expenseLS = JSON.parse(localStorage.getItem('expense'));
+    }
+
+    let expenseLI;
+    // loop through array and objs and create template
+    expenseLS.forEach(function(current){
+        expenseLI += `<li class="inputFormat">
+        <span>${current.name}</span>
+        <span>$${current.number}</span>
+        <span><i class="far fa-trash-alt"></i></span>
+    </li>`;
+        Budget.updateExpenses(current.number);
+    });
+
+    // add template to page and update Total
+    document.querySelector('#expenseUL').innerHTML = expenseLI;
+    Budget.updateTotal();
+}
+
+retreiveFromLS();
 
 // end block wrapper
 
