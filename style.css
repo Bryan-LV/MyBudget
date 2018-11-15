@@ -58,6 +58,10 @@ input{
 
 
 /* MAIN DIV STYLES  */
+
+.far {
+    cursor: pointer;
+}
 #incomeColumn{
     display:flex;
     flex-flow:row nowrap;

@@ -64,6 +64,9 @@ function addIncome() {
     Budget.updateIncome(incomeNumber);
     Budget.updateTotal();
     addToLS(incomeName,incomeNumber,'income');
+    // clear fields after submit
+    document.querySelector('#incomeName').value = '';
+    document.querySelector('#income').value = '';
 }
 
 function addExpense (){
@@ -75,6 +78,9 @@ function addExpense (){
     Budget.updateExpenses(expenseNumber);
     Budget.updateTotal();
     addToLS(expenseName,expenseNumber,'expense');
+    // clear fields after submit
+    document.querySelector('#expenseName').value = '';
+    document.querySelector('#expense').value = '';
 }
 
 
@@ -140,7 +146,7 @@ function retreiveFromLS(){
     } else{
         incomeLS = JSON.parse(localStorage.getItem('income'));
     }
-    let incomeLI;
+    let incomeLI = '';
     // loop through array and objs and create template
     incomeLS.forEach(function(current){
         incomeLI += `<li class="inputFormat">
@@ -164,7 +170,7 @@ function retreiveFromLS(){
         expenseLS = JSON.parse(localStorage.getItem('expense'));
     }
 
-    let expenseLI;
+    let expenseLI = '';
     // loop through array and objs and create template
     expenseLS.forEach(function(current){
         expenseLI += `<li class="inputFormat">
