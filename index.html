@@ -13,65 +13,60 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <div class="display">
-                <h1>Total: $<span id="total">0</span></h1>
-                <h3>Income: + $<span id="displayIncome">0</span></h3>
-                <h3>Expenses: - $<span id="displayExpense">0</span></h3>
+    <div class="wrapper">
+        <aside>
+            <div class="crosses">
+                <span id="crossX"></span>
+                <span id="crossZ"></span>
+                <span id="crossY"></span>
             </div>
-        </header>
-        <main id="columns">
-            <div id="incomeColumn">
-                <div id="inputBlock">
-                    <div id="incomeBlock">
-                        <label for="inputName">Income</label>
-                        <div class="incomeInputs">
-                            <input type="text" id="incomeName">
-                            <input type="number" id="income">
-                            <div class="button">
-                                <a id="addIncome">Add</a>
-                            </div>
-                            <ul id="incomeUL">
-                                <!-- <li class="inputFormat">
-                                    <span>Home</span>
-                                    <span>$300</span>
-                                    <span><i class="far fa-trash-alt"></i></span>
-                                </li> -->
-                            </ul>
+        </aside>
+        <div class="main-content">
+                <header>
+                        <div class="display">
+                            <h1>Total: $<span id="total">0</span></h1>
+                            <h3>Income: + $<span id="displayIncome">0</span></h3>
+                            <h3>Expenses: - $<span id="displayExpense">0</span></h3>
                         </div>
-                    </div>
-                </div>
-                <div id="expenseColumn">
-                    <div id="expenseBlock">
-                        <label for="expenseName">Expense</label>
-                        <div class="expenseInputs">
-                            <input type="text" id="expenseName">
-                            <input type="number" id="expense">
-                            <div class="button">
-                                <a id="addExpense">Add</a>
+                    </header>
+                    <main id="columns">
+                        <div id="incomeColumn">
+                            <div id="inputBlock">
+                                <div id="incomeBlock">
+                                    <label for="inputName">Income</label>
+                                    <div class="incomeInputs">
+                                        <input type="text" id="incomeName">
+                                        <input type="number" id="income">
+                                        <div class="button">
+                                            <a id="addIncome">Add Income</a>
+                                        </div>
+                                        <ul id="incomeUL">
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                            <ul id="expenseUL">
-                                <!-- <li class="inputFormat">
-                                    <span>Home</span>
-                                    <span>$300</span>
-                                    <span><i class="far fa-trash-alt"></i></span>
-                                </li>
-                                <li class="inputFormat">
-                                    <span>Home</span>
-                                    <span>$300</span>
-                                    <span><i class="far fa-trash-alt"></i></span>
-                                </li> -->
-                            </ul>
+                            <div id="expenseColumn">
+                                <div id="expenseBlock">
+                                    <label for="expenseName">Expense</label>
+                                    <div class="expenseInputs">
+                                        <input type="text" id="expenseName">
+                                        <input type="number" id="expense">
+                                        <div class="button">
+                                            <a id="addExpense">Add Expense</a>
+                                        </div>
+                                        <ul id="expenseUL">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+            
                         </div>
-                    </div>
-                </div>
-
-            </div>
-        </main>
+                    </main>
+        </div>
     </div>
-
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> -->
     <script src="app.js"></script>
+    <!-- <script src="chart.js"></script> -->
 </body>
 
 </html>

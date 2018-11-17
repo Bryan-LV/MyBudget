@@ -2,8 +2,28 @@
 let incomeButton = document.querySelector('#addIncome');
 let expenseButton = document.querySelector('#addExpense');
 let columns = document.querySelector('#columns');
-incomeButton.addEventListener('click', addIncome);
-expenseButton.addEventListener('click', addExpense);
+incomeButton.addEventListener('click', function(){
+    // check if inputs have values
+    let income = document.querySelector('#incomeName');
+    let number = document.querySelector('#income');
+    if(income.value && number.value){
+        addIncome();
+    } else{
+        alert('Please add income first')
+    }
+});
+
+expenseButton.addEventListener('click', function(){
+    // check if inputs have values
+    let expense = document.querySelector('#expenseName');
+    let number = document.querySelector('#expense');
+    if(expense.value && number.value){
+        addExpense();
+    } else{
+        alert('Please add expense first')
+    }
+});
+
 columns.addEventListener('click', function (e) {
     if (e.target.classList.contains('fa-trash-alt')) {
         deleteItem(e.target);
@@ -221,7 +241,9 @@ function deleteItem(target) {
         Budget.updateTotal();
     } else if (li.classList.contains('expense')) {
         Budget.expenses.forEach(function (current, index) {
-            Budget.expenses.splice(index, 1);
+            if (liNumberFormatted === current) {
+                Budget.expenses.splice(index, 1);
+            }
         });
         Budget.deleteExpense();
         Budget.updateTotal();
